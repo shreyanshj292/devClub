@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books page</title>
+</head>
+<body>
+<h1>Hello {{name}}</h1>
+<h2>Books name: {{title}}</h2>
+<h2>Books author: {{author}}</h2>
+<h2>Books publisher: {{publisher}}</h2>
+<h2>Books genre: {{genre}}</h2>
+<h2>Books summary: {{summary}}</h2>
+<h2>Books ISBN: {{ISBN}}</h2>
+<h2>Books location: {{location}}</h2>
+<h2>Books count: {{count}}</h2>
+<h3>Want to issue this book??</h3>
+{%  if count   %}
+    <form method="get" action="/myapp/requested">
+        <span id="name">{{name}}</span>
+        <span id="title">{{title}}</span>
+        <button type="submit" name="data" value="{{name}}+{{title}}">Press this button to request issue of this</button>
+    </form>
+{%  else  %}
+    <h4>Sorry this book is currently not available</h4>
+{%  endif  %}
+<br>
+<br>
+<br>
+<a href="/">Home</a>
+</body>
+</html>
+
+
+<!--title,author,publisher,genre,summary,ISBN,location,count-->

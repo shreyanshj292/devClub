@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Add</title>
+</head>
+<body>
+<h1>Welcome {{name}}</h1>
+<form method="get" action="/myapp/book_added" enctype="multipart/form-data">
+  <label for="title">Enter the name of the book you want to add</label>
+  <input type="text" name="title" id="title" placeholder="Book's name">
+  <label for="author">Enter the author's name for your book</label>
+  <input type="text" name="author" id="author" placeholder="Author's name">
+  <label for="publisher">Enter the name of the publisher of your book</label>
+  <input type="text" name="publisher" id="publisher" placeholder="Publisher's name">
+  <label for="ISBN">Enter the ISBN of your book</label>
+  <input type="text" name="ISBN" id="ISBN" placeholder="ISBN">
+  <label for="genre">Enter the genre of your book</label>
+  <input type="text" name="genre" id="genre" placeholder="Book's name">
+  <input type="file" id="myfile" name="filename">
+  <button type="submit">Submit</button>
+
+</form>
+</body>
+</html>

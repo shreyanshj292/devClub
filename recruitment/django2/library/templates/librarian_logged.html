@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Librarian logged in</title>
+</head>
+<body>
+<h1>Hello Librarian {{name}}</h1>
+<form method="get" action="/myapp/request_accepted">
+    Student Requests:<br>
+    <ol>
+    {%  for req in request  %}
+            <li>
+                <h5>Requested book: {{req.Title}}</h5>
+                <h5>Requested by: {{req.Name}}</h5>
+                <h5>Requested on: {{req.Date}}</h5>
+                <input type="checkbox" name="check" value="{{req.Name}}+{{req.Title}}">
+            </li>
+    {%  endfor  %}
+    </ol>
+    <button type="submit">Submit</button>
+</form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="/myapp/add_book_request">Add a book</a>
+<a href="/myapp/">Home</a>
+</body>
+</html>

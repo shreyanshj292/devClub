@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book select page</title>
+</head>
+<body>
+<h1>Select on of the following books</h1>
+<form action="/myapp/book_selected" method="get">
+    <ol>
+    {%  for item in name  %}
+        <li>
+        <input type="radio" name="book_select" id="{{  item  }}" value="{{  item  }}">
+        <label for="{{  item  }}">
+            {{  item  }}
+        </label>
+        </li>
+    {%  endfor  %}
+    </ol>
+    <button type="submit">Submit</button>
+</form>
+<br>
+<br>
+<br>
+<a href="/myapp/">Home</a>
+</body>
+</html>

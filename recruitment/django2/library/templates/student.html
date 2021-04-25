@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Student</title>
+</head>
+<body>
+<h1>Hi {{name}}!!</h1>
+<h3>Search name of your book in search bar below</h3>
+<form action="/myapp/book" method="get">
+    <input placeholder="Book's name" name="book_name">
+    <button type="submit">Submit</button>
+</form>
+<h3>{{status}}</h3>
+<br>
+<br>
+<br>
+<div>
+    <h4>Requests Accepted</h4>
+    <form method="get" action="/myapp/book_show">
+    <ul>
+    {%  for req in issued  %}
+        <li>
+            <button type="submit" name="title" value="{{req.Title}}">{{  req.Title  }}</button>
+        </li>
+    {%  endfor  %}
+    </ul>
+    </form>
+</div>
+<div>
+    <h4>Requests Pending</h4>
+    <ul>
+    {%  for req in pending  %}
+        <li>
+            {{  req.Title  }}
+        </li>
+    {%  endfor  %}
+    </ul>
+</div>
+<br>
+<br>
+<a href="/myapp/">Home</a>
+</body>
+</html>
